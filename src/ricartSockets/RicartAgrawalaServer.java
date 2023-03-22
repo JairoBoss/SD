@@ -16,7 +16,7 @@ public class RicartAgrawalaServer {
             ServerSocket servidor = new ServerSocket(PUERTO);
             System.out.println("Servidor iniciado en el puerto " + PUERTO);
 
-            int numProcesos = 3;
+            int numProcesos = 10;
             for (int i = 0; i < numProcesos; i++) {
                 Socket socket = servidor.accept();
                 new Thread(new ProcesoHandler(socket)).start();
@@ -73,7 +73,7 @@ public class RicartAgrawalaServer {
                     }
                 }
             } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
             }
         }
     }
